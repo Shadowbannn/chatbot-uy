@@ -205,6 +205,21 @@
     font-weight: 800;
     letter-spacing: 0.5px;
   }
+
+  .answer-card .head a.num-link {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s;
+}
+
+.answer-card .head a.num-link:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
   .answer-card .head .label{
     font-size: 0.78rem;
     background: rgba(0, 0, 0, 0.25);
@@ -445,13 +460,16 @@ function addUserBubble(text){
 }
 
 function addAnswerCard(cat){
+  // Limpia el número de espacios y caracteres especiales para el enlace tel:
+  const cleanNumber = cat.numero.replace(/\s+/g, '').split('/')[0];
+
   const row = document.createElement("div");
   row.className = "row bot";
   row.innerHTML = `
     <div class="avatar">SIE</div>
     <div class="answer-card">
       <div class="head">
-        <span class="num">${cat.numero}</span>
+        <a href="tel:${cleanNumber}" class="num-link" title="Toca para llamar">${cat.numero} 📞</a>
         <span class="label">${cat.chip}</span>
       </div>
       <div class="body">
