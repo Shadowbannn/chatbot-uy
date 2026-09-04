@@ -206,18 +206,23 @@
     letter-spacing: 0.5px;
   }
 
-  .answer-card .head a.num-link {
-  color: #FFFFFF;
-  text-decoration: none;
+.answer-card .head a.num-link {
+  color: #FFFFFF !important;
+  text-decoration: none !important;
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: 0.5px;
-  transition: opacity 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.2s ease;
 }
 
-.answer-card .head a.num-link:hover {
-  opacity: 0.8;
-  text-decoration: underline;
+.answer-card .head a.num-link:hover,
+.answer-card .head a.num-link:focus,
+.answer-card .head a.num-link:active {
+  text-decoration: none !important;
+  transform: scale(1.05);
 }
 
   .answer-card .head .label{
